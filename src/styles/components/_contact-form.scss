@@ -1,0 +1,158 @@
+@use '../base/variables' as *;
+
+.contact-form {
+  &__card {
+    background-color: $color-bg;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    transform: translateY(-2px);
+    transition: box-shadow 0.2s ease;
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--avatar {
+      margin-top: 1rem;
+
+      .p-error-message {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    color: $color-text-primary;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+    &.p-invalid {
+      border-color: var(--red-500);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-button-bg;
+    }
+  }
+
+  &__error-message {
+    margin-bottom: 1rem;
+  }
+
+  .p-error-message {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+
+    .p-inline-message {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__dropzone {
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
+
+    & {
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      border-color: $color-button-bg;
+    }
+
+    &.active {
+      border-color: $color-button-bg;
+      background-color: rgba($color-button-bg, 0.1);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $color-text-secondary;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &__avatar-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      color: $color-text-secondary;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  &__avatar-remove {
+    position: absolute !important;
+    top: -0.5rem;
+    right: -0.5rem;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+
+    .pi {
+      font-size: 0.75rem;
+    }
+  }
+}
