@@ -1,0 +1,140 @@
+@use '../base/variables' as vars;
+@use "sass:color";
+
+.contact-list {
+  &__page {
+    padding: vars.$spacing-xl;
+    min-height: 100vh;
+    background-color: rgb(255, 242, 215);
+
+    @media (max-width: vars.$breakpoint-md) {
+      padding: vars.$spacing-md;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-xl;
+    margin: vars.$spacing-xl 0;
+
+    @media (max-width: vars.$breakpoint-md) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: vars.$spacing-md;
+      margin: vars.$spacing-lg 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: vars.$font-size-lg * 1.5;
+      font-weight: vars.$font-weight-bold;
+      color: vars.$color-text-primary;
+      flex-shrink: 0;
+
+      @media (max-width: vars.$breakpoint-md) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__search-container {
+    position: relative;
+    flex: 1;
+    max-width: 600px;
+
+    @media (max-width: vars.$breakpoint-md) {
+      max-width: none;
+    }
+
+    .p-input-icon-left {
+      width: 100%;
+
+      i {
+        left: 1.5rem;
+        color: #666;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 3rem;
+        border-radius: vars.$border-radius-pill;
+        background-color: white;
+        border: 1px solid #ddd;
+        font-size: vars.$font-size-base;
+
+        &:focus {
+          outline: none;
+          border-color: vars.$color-button-bg;
+          box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+        }
+
+        &::placeholder {
+          color: #666;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: vars.$spacing-xl;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: vars.$breakpoint-md) {
+      margin-top: vars.$spacing-lg;
+    }
+  }
+
+  &__add-button {
+    margin-left: auto;
+    background-color: vars.$color-button-bg;
+    border: none;
+    border-radius: vars.$border-radius-pill;
+    padding: vars.$spacing-sm vars.$spacing-lg;
+    color: vars.$color-text-primary;
+    font-weight: vars.$font-weight-medium;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    @media (max-width: vars.$breakpoint-md) {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: color.adjust(vars.$color-button-bg, $lightness: -5%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    .pi {
+      margin-right: vars.$spacing-sm;
+    }
+  }
+
+  &__load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: vars.$spacing-xl;
+
+    & button {
+
+      background-color: vars.$color-button-bg;
+      color: black;
+      border: none;
+      border-radius: vars.$border-radius-pill;
+    }
+
+    @media (max-width: vars.$breakpoint-md) {
+      margin-top: vars.$spacing-lg;
+    }
+  }
+}
