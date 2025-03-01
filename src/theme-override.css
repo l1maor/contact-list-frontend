@@ -1,0 +1,10 @@
+/* Override PrimeReact default styles */
+.p-inputtext:enabled:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+body {
+  background-color: #fff2d7;
+  color: #000000;
+}
