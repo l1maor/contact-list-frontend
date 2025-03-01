@@ -1,0 +1,52 @@
+@use '../base/variables' as vars;
+@use "sass:color";
+
+.contact-view {
+  &__page {
+    background-color: vars.$color-bg;
+    min-height: 100vh;
+    padding: vars.$spacing-xl;
+
+    @media (min-width: vars.$breakpoint-md) {
+      padding: 1.5rem 2rem;
+    }
+
+    @media (min-width: vars.$breakpoint-lg) {
+      padding: 2rem;
+    }
+  }
+
+  &__card {
+    background-color: vars.$color-bg;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.05);
+
+    &--bio {
+      padding: vars.$spacing-md;
+    }
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: vars.$border-radius-md;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__phone-icon {
+    font-size: 1rem;
+  }
+
+  &__button {
+    background-color: vars.$color-button-bg;
+    border: none;
+    border-radius: vars.$border-radius-pill;
+    color: vars.$color-text-primary;
+
+    &:hover {
+      background-color: color.adjust(vars.$color-button-bg, $lightness: -5%);
+    }
+  }
+}
