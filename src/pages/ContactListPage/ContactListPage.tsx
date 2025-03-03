@@ -91,7 +91,7 @@ const ContactListPage: React.FC = () => {
         </div>
       )}
 
-      {hasMore && !isLoading && (
+      {contacts.length > 0 && hasMore && !isLoading && (
         <div className="contact-list__load-more">
           <Button
             label="Load more"
